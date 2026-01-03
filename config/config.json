@@ -1,0 +1,65 @@
+{
+  "pageAccessToken": "EAAY...",
+  "verifyToken": "irfan_bot_3d_2024",
+  "pageId": "123456789012345",
+  "appSecret": "your_app_secret_here",
+  
+  "branding": {
+    "botName": "IRFAN 3D Bot",
+    "author": "IRFAN",
+    "themeColor": "#6366f1"
+  },
+  
+  "bot": {
+    "prefixEnabled": true,
+    "prefix": "/",
+    "caseInsensitive": true,
+    "allowAliases": true,
+    "typingIndicator": true,
+    "readReceipt": true
+  },
+  
+  "admins": {
+    "uids": ["100000000000001"],
+    "ownerUID": "100000000000001"
+  },
+  
+  "features": {
+    "commands": true,
+    "games": true,
+    "economy": true,
+    "webview": true,
+    "logging": true
+  },
+  
+  "database": {
+    "mongoUri": "mongodb+srv://username:password@cluster.mongodb.net/botdb?retryWrites=true&w=majority",
+    "fallbackToLocalJson": true,
+    "autoSync": true
+  },
+  
+  "economy": {
+    "startBalance": 5000,
+    "currencySymbol": "💵",
+    "maxBalance": 1000000,
+    "dailyBonus": 200
+  },
+  
+  "games": {
+    "minBet": 100,
+    "maxBet": 5000,
+    "adminUnlimitedBalance": false,
+    "3dEnabled": true
+  },
+  
+  "webview": {
+    "baseUrl": "https://your-bot.vercel.app",
+    "jwtSecret": "your_jwt_secret_key_here",
+    "sessionDuration": 3600
+  },
+  
+  "logging": {
+    "level": "info",
+    "file": "logs/bot.log"
+  }
+}
