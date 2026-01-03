@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app/api/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/app/api/$1"
+    },
+    {
+      "src": "/webview/(.*)",
+      "dest": "/app/webview/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/app/api/webhook/route",
+      "methods": ["POST"]
+    },
+    {
+      "src": "/webhook",
+      "dest": "/app/api/webhook/route",
+      "methods": ["GET"]
+    }
+  ],
+  "env": {
+    "MONGODB_URI": "@mongodb_uri",
+    "PAGE_ACCESS_TOKEN": "@page_access_token",
+    "VERIFY_TOKEN": "@verify_token",
+    "JWT_SECRET": "@jwt_secret",
+    "APP_SECRET": "@app_secret"
+  }
+}
